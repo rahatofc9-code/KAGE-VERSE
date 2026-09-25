@@ -47,8 +47,7 @@ const animeData = {
 
         type: "Movie • Romance • Drama",
 
-        video:
-            ""
+        video:"https://app.videncrypt.com/embed/6ab6337eae041438d56051b3"
 
     },
 
