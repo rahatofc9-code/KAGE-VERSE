@@ -1,0 +1,963 @@
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+/* =========================================================
+   2. GLOBAL
+========================================================= */
+
+body {
+    min-height: 100vh;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    background:
+        radial-gradient(
+            circle at top,
+            #1e293b 0%,
+            #0f172a 40%,
+            #05070b 100%
+        );
+
+    color: #ffffff;
+
+    line-height: 1.6;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    font: inherit;
+}
+
+section {
+    width: 100%;
+}
+
+main {
+    width: 100%;
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   3. HEADER
+========================================================= */
+
+.site-header {
+    width: calc(100% - 40px);
+    max-width: 1200px;
+
+    margin: 20px auto;
+    padding: 16px 22px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    background: rgba(255, 255, 255, 0.06);
+
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    border-radius: 18px;
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    position: sticky;
+    top: 15px;
+
+    z-index: 1000;
+}
+
+
+/* Logo */
+
+.logo {
+    font-size: 22px;
+    font-weight: 800;
+
+    letter-spacing: 1px;
+    white-space: nowrap;
+
+    transition: opacity 0.2s ease;
+}
+
+.logo:hover {
+    opacity: 0.75;
+}
+
+
+/* Navigation */
+
+.navbar {
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+}
+
+.navbar a {
+    padding: 8px 14px;
+
+    color: #cbd5e1;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    border-radius: 10px;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease;
+}
+
+.navbar a:hover,
+.navbar a.active {
+    color: #ffffff;
+
+    background: rgba(255, 255, 255, 0.10);
+}
+
+
+/* =========================================================
+   4. HERO
+========================================================= */
+
+.hero {
+    width: calc(100% - 40px);
+    max-width: 1200px;
+
+    min-height: 600px;
+
+    margin: 0 auto;
+    padding: 100px 30px;
+
+    display: flex;
+    align-items: center;
+
+    position: relative;
+
+    background-image: url("image/hero.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    border-radius: 15px;
+
+    overflow: hidden;
+}
+
+
+/* Hero Overlay */
+
+.hero::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0.72),
+            rgba(0, 0, 0, 0.30),
+            rgba(0, 0, 0, 0.10)
+        );
+
+    z-index: 0;
+}
+
+
+/* Hero Content */
+
+.hero-content {
+    max-width: 760px;
+
+    position: relative;
+    z-index: 1;
+}
+
+
+/* Hero Label */
+
+.hero-label,
+.section-label {
+    margin-bottom: 12px;
+
+    color: #94a3b8;
+
+    font-size: 12px;
+    font-weight: 800;
+
+    letter-spacing: 2px;
+}
+
+
+/* Hero Heading */
+
+.hero h1 {
+    margin-bottom: 22px;
+
+    font-size: clamp(48px, 8vw, 90px);
+
+    line-height: 0.98;
+
+    letter-spacing: -3px;
+}
+
+
+/* Hero Description */
+
+.hero-description {
+    max-width: 620px;
+
+    margin-bottom: 30px;
+
+    color: #cbd5e1;
+
+    font-size: 17px;
+}
+
+
+/* Hero Buttons */
+
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 12px;
+}
+
+.hero-button {
+    min-height: 48px;
+
+    padding: 0 22px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #ffffff;
+    color: #0f172a;
+
+    border-radius: 12px;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    transition:
+        transform 0.2s ease,
+        opacity 0.2s ease;
+}
+
+.hero-button:hover {
+    transform: translateY(-2px);
+
+    opacity: 0.88;
+}
+
+
+/* Secondary Hero Button */
+
+.hero-button.secondary {
+    background: rgba(255, 255, 255, 0.08);
+
+    color: #ffffff;
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+
+/* =========================================================
+   5. INTRO
+========================================================= */
+
+.intro-section {
+    max-width: 900px;
+
+    margin: 0 auto;
+
+    padding: 80px 30px;
+
+    text-align: center;
+}
+
+.section-heading h2,
+.section-title h2 {
+    margin-bottom: 14px;
+
+    font-size: clamp(28px, 5vw, 44px);
+
+    line-height: 1.1;
+}
+
+.section-heading > p:last-child {
+    max-width: 650px;
+
+    margin: 0 auto;
+
+    color: #94a3b8;
+
+    font-size: 16px;
+}
+
+
+/* =========================================================
+   6. ANIRO MENU
+========================================================= */
+
+.aniro-menu {
+    max-width: 1000px;
+
+    margin: 0 auto;
+
+    padding: 70px 30px;
+}
+
+
+/* Section Title */
+
+.section-title {
+    margin-bottom: 30px;
+}
+
+
+/* Button Grid */
+
+.button-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 14px;
+}
+
+
+/* Menu Button */
+
+.menu-button {
+    min-height: 90px;
+
+    padding: 18px 20px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 16px;
+
+    background: rgba(255, 255, 255, 0.055);
+
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    border-radius: 16px;
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.menu-button:hover {
+    transform: translateY(-3px);
+
+    background: rgba(255, 255, 255, 0.09);
+
+    border-color: rgba(255, 255, 255, 0.16);
+}
+
+
+/* Button Icon */
+
+.button-icon {
+    width: 48px;
+    height: 48px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(255, 255, 255, 0.08);
+
+    border-radius: 13px;
+
+    font-size: 21px;
+}
+
+
+/* Button Text */
+
+.button-text {
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.button-text strong {
+    font-size: 16px;
+}
+
+.button-text small {
+    margin-top: 2px;
+
+    color: #94a3b8;
+
+    font-size: 12px;
+}
+
+
+/* Arrow */
+
+.arrow {
+    color: #94a3b8;
+
+    font-size: 20px;
+
+    transition:
+        transform 0.2s ease,
+        color 0.2s ease;
+}
+
+.menu-button:hover .arrow {
+    color: #ffffff;
+
+    transform: translateX(4px);
+}
+
+
+/* =========================================================
+   7. TOOLS
+========================================================= */
+
+.tools-section {
+    max-width: 1000px;
+
+    margin: 0 auto;
+
+    padding: 70px 30px;
+}
+
+
+/* Tools Title */
+
+.tools-section .section-title {
+    margin-bottom: 30px;
+}
+
+.tools-section .section-label {
+    color: #94a3b8;
+
+    font-size: 12px;
+    font-weight: 800;
+
+    letter-spacing: 2px;
+}
+
+.tools-section .section-title h2 {
+    margin-bottom: 14px;
+
+    font-size: clamp(28px, 5vw, 44px);
+
+    line-height: 1.1;
+}
+
+.tools-section .section-title > p:last-child {
+    color: #94a3b8;
+
+    font-size: 16px;
+}
+
+
+/* Tools Grid */
+
+.tools-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 14px;
+}
+
+
+/* Tool Card */
+
+.tool-card {
+    padding: 25px;
+
+    background: rgba(255, 255, 255, 0.055);
+
+    border: 1px solid rgba(255, 255, 255, 0.09);
+
+    border-radius: 16px;
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.tool-card:hover {
+    transform: translateY(-3px);
+
+    background: rgba(255, 255, 255, 0.09);
+
+    border-color: rgba(255, 255, 255, 0.16);
+}
+
+
+/* Tool Title */
+
+.tool-card h3 {
+    margin-bottom: 8px;
+
+    font-size: 20px;
+}
+
+
+/* Tool Description */
+
+.tool-card p {
+    margin-bottom: 18px;
+
+    color: #94a3b8;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+}
+
+
+/* Tool Button */
+
+.tool-card a {
+    padding: 10px 16px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #ffffff;
+    color: #0f172a;
+
+    border-radius: 10px;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    transition:
+        transform 0.2s ease,
+        opacity 0.2s ease;
+}
+
+.tool-card a:hover {
+    transform: translateY(-2px);
+
+    opacity: 0.85;
+}
+
+
+/* =========================================================
+   8. CREATOR
+========================================================= */
+
+.creator-section {
+    max-width: 1000px;
+
+    margin: 0 auto;
+
+    padding: 80px 30px;
+}
+
+.creator-content {
+    padding: 45px;
+
+    background: rgba(255, 255, 255, 0.055);
+
+    border: 1px solid rgba(255, 255, 255, 0.09);
+
+    border-radius: 20px;
+}
+
+.creator-content h2 {
+    margin-bottom: 10px;
+
+    font-size: 34px;
+}
+
+.creator-content p:last-child {
+    max-width: 650px;
+
+    color: #94a3b8;
+}
+
+
+/* =========================================================
+   9. EXTERNAL WEBSITE
+========================================================= */
+
+.external-section {
+    max-width: 1000px;
+
+    margin: 0 auto;
+
+    padding: 70px 30px;
+}
+
+.external-card {
+    padding: 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    background: rgba(255, 255, 255, 0.055);
+
+    border: 1px solid rgba(255, 255, 255, 0.09);
+
+    border-radius: 18px;
+}
+
+.external-card p {
+    margin-bottom: 3px;
+
+    color: #94a3b8;
+
+    font-size: 12px;
+}
+
+.external-card h3 {
+    font-size: 25px;
+}
+
+.external-card > a {
+    padding: 10px 16px;
+
+    background: #ffffff;
+    color: #0f172a;
+
+    border-radius: 10px;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    white-space: nowrap;
+
+    transition:
+        transform 0.2s ease,
+        opacity 0.2s ease;
+}
+
+.external-card > a:hover {
+    transform: translateY(-2px);
+
+    opacity: 0.85;
+}
+
+
+/* =========================================================
+   10. FOOTER
+========================================================= */
+
+.site-footer {
+    width: calc(100% - 40px);
+    max-width: 1200px;
+
+    margin: 50px auto 20px;
+
+    padding: 30px;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer-content {
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 30px;
+}
+
+
+/* Footer Brand */
+
+.footer-brand > a {
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.footer-brand p {
+    margin-top: 5px;
+
+    color: #64748b;
+
+    font-size: 13px;
+}
+
+
+/* Footer Links */
+
+.footer-links {
+    display: flex;
+    align-items: center;
+
+    gap: 18px;
+}
+
+.footer-links a {
+    color: #94a3b8;
+
+    font-size: 13px;
+
+    transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+    color: #ffffff;
+}
+
+
+/* Footer Bottom */
+
+.footer-bottom {
+    margin-top: 30px;
+
+    padding-top: 20px;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+
+    color: #64748b;
+
+    font-size: 12px;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   11. RESPONSIVE
+========================================================= */
+
+
+/* Tablet */
+
+@media (max-width: 800px) {
+
+    .site-header {
+        width: calc(100% - 24px);
+
+        margin: 12px;
+
+        padding: 14px 16px;
+
+        flex-wrap: wrap;
+    }
+
+
+    .navbar {
+        order: 3;
+
+        width: 100%;
+
+        justify-content: center;
+
+        padding-top: 12px;
+
+        border-top: 1px solid rgba(255, 255, 255, 0.07);
+    }
+
+
+    .hero {
+        width: calc(100% - 24px);
+
+        min-height: 520px;
+
+        padding: 80px 25px;
+    }
+
+
+    .hero h1 {
+        letter-spacing: -2px;
+    }
+
+
+    .button-grid,
+    .tools-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .footer-content {
+        flex-direction: column;
+    }
+
+
+    .footer-links {
+        flex-wrap: wrap;
+    }
+}
+
+
+/* Mobile */
+
+@media (max-width: 520px) {
+
+    .site-header {
+        border-radius: 14px;
+    }
+
+
+    .logo {
+        font-size: 18px;
+    }
+
+
+    .navbar {
+        gap: 2px;
+    }
+
+
+    .navbar a {
+        padding: 7px 9px;
+
+        font-size: 12px;
+    }
+
+
+    .hero {
+        width: calc(100% - 20px);
+
+        min-height: 500px;
+
+        padding: 65px 20px;
+
+        border-radius: 15px;
+    }
+
+
+    .hero h1 {
+        font-size: 48px;
+    }
+
+
+    .hero-description {
+        font-size: 15px;
+    }
+
+
+    .hero-buttons {
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+
+    .hero-button {
+        width: 100%;
+    }
+
+
+    .intro-section,
+    .aniro-menu,
+    .tools-section,
+    .creator-section,
+    .external-section {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+
+    .tools-section {
+        padding-top: 55px;
+        padding-bottom: 55px;
+    }
+
+
+    .tool-card {
+        padding: 22px;
+    }
+
+
+    .creator-content {
+        padding: 28px 22px;
+    }
+
+
+    .external-card {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+
+    .external-card > a {
+        width: 100%;
+
+        text-align: center;
+    }
+
+
+    .footer-content {
+        text-align: center;
+
+        align-items: center;
+    }
+
+}
+
+/* =========================
+   SOCIAL BUTTONS
+========================= */
+
+.social-button {
+    display: inline-block;
+
+    margin-top: 20px;
+    margin-right: 10px;
+
+    padding: 12px 22px;
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 12px;
+
+    background: rgba(255, 255, 255, 0.06);
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    transition:
+        0.25s ease;
+}
+
+
+.social-button:hover {
+    transform: translateY(-3px);
+
+    background: rgba(255, 255, 255, 0.12);
+
+    border-color: rgba(255, 255, 255, 0.35);
+}
